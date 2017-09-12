@@ -105,7 +105,7 @@ define autofs::mount (
       'owner'   => 'root',
       'group'   => 'root',
       'mode'    => '0755',
-      'require' => $require_type,
+      'require' => Class['autofs::package'],
     })
 
     if !defined(Concat::Fragment['autofs::fragment preamble map directory']) {
